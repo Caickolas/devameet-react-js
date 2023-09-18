@@ -5,7 +5,7 @@ import passwordIcon from '../assets/images/key.svg';
 import { Link, useNavigate } from 'react-router-dom';
 
 import { PublicInput } from '../components/general/PublicInput';
-import { AvatarInput } from '../components/general/avatarInput';
+import { AvatarInput } from '../components/general/AvatarInput';
 import { useState } from 'react';
 import { RegisterServices } from '../services/RegisterServices';
 
