@@ -1,33 +1,39 @@
 @import './configs.scss';
 
-.container-public{
+.container-public {
     width: 85%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    .logo{
+    .logo {
         margin-bottom: 60px;
         height: 12%;
         max-width: 228px;
     }
 
-    p{
+    &.register{
+        .logo{
+            display: none;
+        }
+    }
+
+    p {
         text-align: center;
         font-weight: bold;
         max-width: 300px;
+
+        &.error {
+            color: $error;
+        }
+
+        &.success {
+            color: $primaryColor;
+        }
     }
 
-    &.error{
-        color: $error;
-    }
-
-    &.success{
-        color: $primaryColor;
-    }
-
-    form{
+    form {
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -42,38 +48,37 @@
             padding-top: 10px;
             padding-bottom: 5px;
             margin-bottom: 15px;
-    
+
             border-top: 0;
-            border-right: 0;
             border-left: 0;
+            border-right: 0;
             border-bottom: 1px solid $greyColor;
-    
+
             &.focus {
                 border-bottom-color: $primaryColor;
             }
-    
+
             img {
                 margin-right: 10px;
                 width: 20px;
             }
-    
             input {
                 display: flex;
                 align-items: center;
                 width: 100%;
             }
         }
-    
-        .link{
+
+        .link {
             text-align: center;
             margin-top: 30px;
-    
-            p{
+
+            p {
                 color: $greyColor;
                 margin: 0 0 2px;
             }
-    
-            a{
+
+            a {
                 color: $primaryColor;
                 font-family: $fontBold;
                 text-decoration: underline;
@@ -86,8 +91,7 @@
         }
     }
 
-    @media screen and (min-width: $desktopBreakpoint){
-       
+    @media screen and (min-width: $desktopBreakpoint) {
         width: 100%;
         height: 100%;
         background-color: white;
@@ -97,14 +101,20 @@
         justify-content: space-evenly;
         align-items: center;
 
+        &.register{
+            .logo{
+                display: block;
+            }
+        }
+
         .logo{
-            max-width: none;
+            max-width: none;           
             margin: 0;
             min-width: 40%;
         }
 
         p{
-            &.error, &.sucess{
+            &.error, &.success{
                 max-width: none;
             }
         }
@@ -128,7 +138,4 @@
             }
         }
     }
-
-
-    
 }
